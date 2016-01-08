@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :meals
   root to: "high_voltage/pages#show", id: "home"
  
-  devise_for :users do
+  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'} do
    
   end
   # The priority is based upon order of creation: first created -> highest priority.
