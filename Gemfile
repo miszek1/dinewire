@@ -47,6 +47,7 @@ group :development do
   gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'better_errors'
+  gem "letter_opener"
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

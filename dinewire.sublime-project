@@ -1,0 +1,15 @@
+{
+	"folders":
+	[{"folder_exclude_pattern":[
+    "temp", 
+    "log",
+    "vendor",
+    "bin"
+
+  ]},
+
+		{
+			"path": "/Users/mic_z/Projects/dinewire"
+		}
+	]
+}

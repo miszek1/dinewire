@@ -1,1 +1,14 @@
-<h1>Dinewire</h1>
+
+<div class="jumbotron">
+ <center><h1>Food on demand</center></h1>
+ <center><h2>Post Search Chat Eat</center></h3>
+
+ <% if user_signed_in? %>
+  <center><a class = "btn btn-primary btn-lg"<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>         
+  </a></center>
+<% else %>
+  <center><a class = "btn btn-primary btn-lg"<%= link_to('Login', new_user_session_path) %>  
+  </a></center>
+<% end %>
+
+<body style="background-color:white;">

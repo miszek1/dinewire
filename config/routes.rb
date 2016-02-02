@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :meals
+  resources :messages, only: [:show, :edit, :create, :update, :index]
+  resources :meals do 
+    resources :messages, only: [:new]
+  end
   root to: "high_voltage/pages#show", id: "home"
+  resource :dashboard, only: :show
  
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'} do
    
