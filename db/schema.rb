@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123195640) do
+ActiveRecord::Schema.define(version: 20160224021404) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "location"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "meals", ["user_id"], name: "index_meals_on_user_id"
@@ -31,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160123195640) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "parent_id"
   end
 
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
@@ -54,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160123195640) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "user_name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

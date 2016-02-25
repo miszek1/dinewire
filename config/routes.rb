@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
-  resources :messages, only: [:show, :edit, :create, :update, :index]
+  resources :messages, only: [:show, :edit, :create, :update, :index] do 
+    get "reply" => "messages#reply"
+    post "create_reply" => "messages#create_reply"
+  end
+
+  get "search", as: :meals_search, controller: :meals
+
   resources :meals do 
     resources :messages, only: [:new]
+
   end
-  root to: "high_voltage/pages#show", id: "home"
+  get "/pages/*id" => 'pages#show', as: :page, format: false
+  
   resource :dashboard, only: :show
  
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'} do
-   
+  
   end
+  get ":slug" => 'profiles#show', as: :profiles
+
+  root to: "dashboards#home_page_redirecter"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

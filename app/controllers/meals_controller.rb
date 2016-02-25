@@ -63,6 +63,10 @@ class MealsController < ApplicationController
     end
   end
 
+  def search
+    @search = Meal.search { fulltext params[:q] }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meal
@@ -71,6 +75,7 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:name, :description, :location)
+      params.require(:meal).permit(:name, :description, :location, :image)
     end
+
 end

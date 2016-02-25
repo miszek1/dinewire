@@ -34,6 +34,23 @@ class MessagesController < ApplicationController
     end
   end
 
+  def create_reply
+    @message = Message.find(params[:message_id])
+    @reply = @message.children.build(message_params)
+    @reply.recipient_id = @message.user_id
+    @reply.user = current_user
+    if @reply.save
+      redirect_to @message, notice: "Reply Sent!"
+    end
+
+  end
+
+  def reply 
+    @message = Message.find(params[:message_id])
+    @reply = @message.children.build
+  end
+
+
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update

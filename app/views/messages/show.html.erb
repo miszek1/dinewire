@@ -22,3 +22,31 @@
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>|
+<%= link_to 'Reply', message_reply_path(@message) %> 
+
+<% @message.children.each do |message| %>
+<hr>
+<p>
+  <strong>Subject:</strong>
+  <%= message.subject %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= message.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= message.user.full_name %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= message.recipient.full_name %>
+</p>
+<%= link_to 'Reply', message_reply_path(@message) %> 
+<hr>
+<% end %>
+
+

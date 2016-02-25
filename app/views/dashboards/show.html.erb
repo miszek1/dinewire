@@ -1,28 +1,48 @@
-<center><h1> dashboard </h1></center>
-<%= link_to "add meal", new_meal_path %>
-<h3>public meals</h3>
-<div class = "meals">
-  <% @meals.each do | meal | %>
-    <div class = "meal">
-      <div class = "meal name">
-        <%= link_to meal.name, meal_path(meal) %>
-      </div>
-      <div class = "meal description">
-        <%= meal.description %>
-      </div>
-    </div>
+<center><h1> Foodboard </h1></center>
+<div class = "container">
+    <%= form_tag("/search", method: "get", id: "search_form") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q, "", class: "form-control") %>
+    <%= submit_tag("Search", class: "btn btn-primary btn-sm") %>
   <% end %>
-</div>
-<h3>personal meals</h3>
-<div class = "meals">
-  <% @personal_meals.each do | meal | %>
-    <div class = "meal">
-      <div class = "meal name">
-         <%= link_to meal.name, meal_path(meal) %>
+  <%= link_to "add meal", new_meal_path %>
+  
+  <div class = "row">
+  <div class = "meals pull-left col-md-12">
+    <h2>personal meals</h2>
+    <% @personal_meals.each do | meal | %>
+    <div class = "box panel panel-default pull-left col-md-3">
+      <div class = "meal panel-body"> 
+      <div class = "meal image col-md-12">
+      <%= link_to image_tag(meal.image.url(:medium),height: 200, width: 300), meal_path(meal) %>
       </div>
-      <div class = "meal description">
-        <%= meal.description %>
+        <div class = "meal name col-md-12">
+           <%= link_to meal.name, meal_path(meal) %>
+        </div>
+        <div class = "meal description col-md-6">
+          <%= meal.description %>
+        </div>
       </div>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
+  
 </div>
+
+  <div class = "col-md-12">
+  <div class = "meals pull-left col-md-12">
+      <h2>public meals</h2><h6>food made in last 1 hour</h6>
+    <% @meals.each do | meal | %>
+    <div class = "meal image col-md-12">
+      <%= link_to image_tag(meal.image.url(:medium)), meal_path(meal) %>
+      </div>
+      <div class = "meal">
+        <div class = "meal name col-md-12">
+          <%= link_to meal.name, meal_path(meal) %>
+        </div>
+        <div class = "meal description col-md-6">
+          <%= meal.description %>
+        </div>
+      </div>
+    <% end %>
+  
