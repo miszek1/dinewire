@@ -64,7 +64,7 @@ class MealsController < ApplicationController
   end
 
   def search
-    @search = Meal.search { fulltext params[:q] }
+    @search = Meal.search(params[:q])
   end
 
   private

@@ -12,12 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require masonry/jquery.masonry
 //= require bootstrap-sprockets
 //= require_tree .
-$ ->
-  $('#meals').imagesLoaded ->
-    $('#meals').masonry
-      itemSelector: '.box'
-      isFitWidth: true

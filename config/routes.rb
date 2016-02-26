@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :messages, only: [:show, :edit, :create, :update, :index] do 
+  resources :messages, only: [:show, :edit, :create, :update, :index, :destroy] do 
     get "reply" => "messages#reply"
     post "create_reply" => "messages#create_reply"
   end

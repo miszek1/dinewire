@@ -1,0 +1,28 @@
+<div class="container" >
+    
+    <div id="Meals" class="row list-group">
+
+        <div class="item  col-xs-4 col-md-3">
+            <div class="thumbnail">
+                <img class="group list-group-image">
+                  <%= link_to image_tag(meal.image.url(:medium),height: 400, width: 250), meal_path(meal) %>
+
+                <div class="caption">
+                    <%= link_to meal.name, meal_path(meal) %>
+                    <p class="group inner list-group-item-text">
+                        </p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= meal.description %> </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <%= link_to "Message", new_meal_message_path(meal), class: "btn btn-success" %>
+                        </div>
+                </div>
+        </div>
+  </div>
+</div>    
+
+        
+

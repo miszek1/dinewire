@@ -1,13 +1,4 @@
 <h1>search</h1>
 <div class = "meals">
-  <% @search.results.each do | meal | %>
-    <div class = "meal">
-      <div class = "meal name">
-        <%= link_to meal.name, meal_path(meal) %>
-      </div>
-      <div class = "meal description">
-        <%= meal.description %>
-      </div>
-    </div>
-  <% end %>
+ <%= render partial: "meals/meal", collection: @search, as: :meal %>
 </div>
