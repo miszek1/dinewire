@@ -27,6 +27,8 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = current_user.meals.build(meal_params)
+    @meal.expires_at = DateTime.now + 1.hour
+
 
     respond_to do |format|
       if @meal.save
@@ -42,6 +44,12 @@ class MealsController < ApplicationController
   # PATCH/PUT /meals/1
   # PATCH/PUT /meals/1.json
   def update
+    if params[:meal][:expires_at] == "1"
+      params[:meal][:expires_at] = 1.hour.from_now
+    else 
+      params[:meal].delete(:expires_at)
+    end
+
     respond_to do |format|
       if @meal.update(meal_params)
         format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
@@ -75,7 +83,7 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:name, :description, :location, :image)
+      params.require(:meal).permit(:name, :description, :location, :image, :expires_at)
     end
 
 end

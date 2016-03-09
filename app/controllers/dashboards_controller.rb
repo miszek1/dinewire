@@ -2,7 +2,7 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   
   def show
-    @meals = Meal.public_meals(current_user)
+    @meals = Meal.ready_to_eat
     @personal_meals = Meal.personal_meals(current_user)
   end
 
