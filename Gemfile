@@ -14,6 +14,7 @@ gem 'high_voltage'
 gem "paperclip", "~> 4.3"
 gem 'acts_as_tree'
 gem 'masonry-rails', "~> 0.2.0"
+gem "font-awesome-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
