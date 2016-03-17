@@ -261,9 +261,11 @@ padding: 2px;
 }
 
 #home-wrapper {
-  position:relative;
+  position:absolute;
   color:#fff;
-  height:750px; 
+  height:100%; 
+  right:0;
+  left:0;
 }
 
 #home-wrapper .overlay-bg, 
