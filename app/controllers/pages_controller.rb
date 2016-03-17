@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
   before_filter :set_navbar
-
+def home
+layout "landing_page"
+end
+  
   private
  def set_navbar
   case params[:id]
