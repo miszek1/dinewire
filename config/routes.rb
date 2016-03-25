@@ -19,6 +19,14 @@ Rails.application.routes.draw do
   end
   get ":slug" => 'profiles#show', as: :profiles
 
+  namespace :api do
+    namespace :v1 do
+      resources :meals
+      resources :sessions, only: [:create] 
+    end
+
+  end
+
   root to: "dashboards#home_page_redirecter"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
