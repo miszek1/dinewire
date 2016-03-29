@@ -204,7 +204,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
-  devise
+  devise (~> 3.5.6)
   dotenv-rails
   font-awesome-rails
   high_voltage

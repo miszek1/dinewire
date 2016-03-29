@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304012654) do
+ActiveRecord::Schema.define(version: 20160329011050) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160304012654) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "user_name"
+    t.string   "authentication_token"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
