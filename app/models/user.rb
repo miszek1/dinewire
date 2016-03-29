@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
 private
 
 def ensure_authentication_token
-  binding.pry
   if self.authentication_token.nil?
     self.authentication_token = SecureRandom.urlsafe_base64(nil,false)
   end
