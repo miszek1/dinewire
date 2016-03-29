@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  responds_to :json
+  respond_to :json
 
   def create
    json = JSON.parse(params[:body])
