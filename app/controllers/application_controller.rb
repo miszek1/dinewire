@@ -6,4 +6,15 @@ class ApplicationController < ActionController::Base
 def home_page
   @skip_navbar = true
 end
+
+def authenticate_by_token
+  if request.headers["authentication"]
+    @current_user = User.find_by(authentication_token: request.headers["authentication"])
+    if @current_user.nil?
+      render json: {status: "500", error: "authentication failed"}
+    end
+  else 
+    render json: {status: "500", error: "missing authentication"}
+  end
+end
 end

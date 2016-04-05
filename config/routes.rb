@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :meals
       resources :sessions, only: [:create] 
+      resources :messages
     end
 
   end
