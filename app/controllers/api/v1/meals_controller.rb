@@ -12,14 +12,14 @@ class Api::V1::MealsController < ApplicationController
   def show
     meal = Meal.find(params[:id])
     if meal
-    render json: meal, status: 200
+      render json: meal, status: 200
     else 
       render json: {status: "404", error: "record not found"}, status: 404
     end
   end   
 
   def create        
-    json = JSON.parse(params[:body])
+    json = params.permit(:name, :description, :location, :image)
     meal = @current_user.meals.build(json)
     if meal.save
       render json: meal, status: 200
@@ -28,7 +28,7 @@ class Api::V1::MealsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
    meal = Meal.find(params[:id])
    if meal
     meal.delete
@@ -40,7 +40,7 @@ class Api::V1::MealsController < ApplicationController
 
   def update
     meal = Meal.find(params[:id])
-    json = JSON.parse(params[:body])
+    json = params.permit(:name, :description, :location, :image)
     if meal
       meal.update(json)
       render json: meal, status: 200

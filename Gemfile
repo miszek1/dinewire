@@ -16,6 +16,8 @@ gem 'acts_as_tree'
 gem 'masonry-rails', "~> 0.2.0"
 gem "font-awesome-rails"
 gem "aws-sdk", '~> 1.6'
+gem 'rack-cors', :require => 'rack/cors'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
