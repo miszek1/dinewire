@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -17,6 +16,7 @@ gem 'masonry-rails', "~> 0.2.0"
 gem "font-awesome-rails"
 gem "aws-sdk", '~> 1.6'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'geocoder'
 
 
 # Use ActiveModel has_secure_password
