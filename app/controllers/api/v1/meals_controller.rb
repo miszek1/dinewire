@@ -19,7 +19,7 @@ class Api::V1::MealsController < ApplicationController
   end   
 
   def create        
-    json = params.permit(:name, :description, :location, :image)
+    json = params.permit(:name, :description, :latitude, :longitude, :image)
     meal = @current_user.meals.build(json)
     if meal.save
       render json: meal, status: 200
@@ -40,7 +40,7 @@ class Api::V1::MealsController < ApplicationController
 
   def update
     meal = Meal.find(params[:id])
-    json = params.permit(:name, :description, :location, :image)
+    json = params.permit(:name, :description, :latitude, :longitude, :image)
     if meal
       meal.update(json)
       render json: meal, status: 200
