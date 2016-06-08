@@ -27,8 +27,8 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = current_user.meals.build(meal_params)
+    @meal.ip_address = request.location
     @meal.expires_at = DateTime.now + 1.hour
-
 
     respond_to do |format|
       if @meal.save
@@ -72,7 +72,7 @@ class MealsController < ApplicationController
   end
 
   def search
-    @search = Meal.search(params[:q])
+    @search = Meal.search(params[:q]).near([35.43, -118.83], 20, :order => "distance")
   end
 
   private
