@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       resources :meals
       resources :sessions, only: [:create] 
       resources :messages
+      devise_for :users, controllers: {registrations: 'api/v1/registrations'}
     end
 
   end
