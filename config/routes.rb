@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
   get ":slug" => 'profiles#show', as: :profiles
 
-  namespace :api do
+  namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :meals
       resources :sessions, only: [:create] 
