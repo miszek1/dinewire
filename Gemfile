@@ -17,6 +17,7 @@ gem "font-awesome-rails"
 gem "aws-sdk", '~> 1.6'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'geocoder'
+gem 'airbrake'
 
 
 # Use ActiveModel has_secure_password
