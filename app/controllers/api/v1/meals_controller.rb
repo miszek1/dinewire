@@ -21,6 +21,8 @@ class Api::V1::MealsController < ApplicationController
   def create        
     json = params.permit(:name, :description, :latitude, :longitude, :image)
     meal = @current_user.meals.build(json)
+    meal.expires_at = DateTime.now + 1.hour
+    
     if meal.save
       render json: meal, status: 200
     else
