@@ -5,7 +5,7 @@ class Api::V1::MealsController < ApplicationController
 
   def index
     limit = params[:limit] || 10
-    meals = Meal.where(user: @current_user).limit(limit)
+    meals = Meal.all.limit(limit)
     render json: meals, status: 200
   end
 
