@@ -27,7 +27,7 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = current_user.meals.build(meal_params)
-    @meal.ip_address = request.location
+    @meal.ip_address = request.location.ip
     @meal.expires_at = DateTime.now + 1.hour
 
     respond_to do |format|
