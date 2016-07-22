@@ -5,7 +5,7 @@ class Api::V1::SessionsController < ApplicationController
    json = params[:body]
    pw = json["password"]
    email = json["email"]
-   user = User.find_by(email: email)
+   user = User.find_by(email: email.downcase)
    if user && user.valid_password?(pw)
     render json: {success: true, user: {authentication_token: user.authentication_token}}
   else 

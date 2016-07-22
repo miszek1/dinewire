@@ -5,7 +5,11 @@ class Api::V1::MealsController < ApplicationController
 
   def index
     limit = params[:limit] || 10
-    meals = Meal.public_meals(@current_user).limit(limit)
+    if params[:my_meals]
+      meals = Meal.personal_meals(@current_user).limit(limit)
+    else
+      meals = Meal.public_meals(@current_user).limit(limit)
+    end
     render json: meals, status: 200
   end
 
@@ -21,6 +25,7 @@ class Api::V1::MealsController < ApplicationController
   def create        
     json = params.permit(:name, :description, :latitude, :longitude, :image)
     meal = @current_user.meals.build(json)
+    meal.expires_at = DateTime.now + 1.hour
     if meal.save
       render json: meal, status: 200
     else
