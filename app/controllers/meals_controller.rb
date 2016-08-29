@@ -72,7 +72,8 @@ class MealsController < ApplicationController
   end
 
   def search
-    @search = Meal.search(params[:q]).near(request.location.coordinates, 20, :order => "distance")
+    @search = Meal.search(params[:q])
+    #.near(request.location.coordinates, 20, :order => "distance")
   end
 
   private
