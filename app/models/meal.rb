@@ -12,6 +12,10 @@ class Meal < ActiveRecord::Base
   geocoded_by :ip_address
   after_validation :geocode
 
+  def author
+    user.full_name
+  end 
+
   def image_url_thumb
     image.url(:thumb)
   end	
@@ -26,7 +30,7 @@ class Meal < ActiveRecord::Base
 
   def as_json(options={})
     super(
-      :methods => [:image_url_thumb,:image_url_medium,:image_url_orig]
+      :methods => [:image_url_thumb,:image_url_medium,:image_url_orig,:author]
     )
   end
 
