@@ -5,7 +5,8 @@ class Api::V1::MessagesController < ApplicationController
 
   def index
     limit = params[:limit] || 10
-    messages = Message.where(user: @current_user).limit(limit)
+    messages = Message.where(recipient_id: @current_user.id)
+
     render json: messages, status: 200
   end
 
