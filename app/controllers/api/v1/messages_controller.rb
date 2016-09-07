@@ -5,13 +5,13 @@ class Api::V1::MessagesController < ApplicationController
 
   def index
     limit = params[:limit] || 10
-    messages = Message.where(recipient_id: @current_user.id)
+    messages = Message.where(recipient_id: @current_user.id).order( 'created_at DESC' )
 
     render json: messages, status: 200
   end
 
   def show
-    message = Message.where(id: params[:id],user: @current_user).first
+    message = Message.where(id: params[:id], recipient_id: @current_user.id).first
     if message
       render json: message, status: 200
     else 
@@ -20,7 +20,7 @@ class Api::V1::MessagesController < ApplicationController
   end   
 
   def create        
-    json = params[:body].permit(:subject, :body, :recipient_id)
+    json = params[:body].permit(:subject, :body, :recipient_id, :parent_id)
     message = @current_user.messages.build(json)
     if message.save
       render json: message, status: 200
