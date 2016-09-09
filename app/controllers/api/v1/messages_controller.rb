@@ -30,7 +30,7 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def destroy
-    message = Message.where(id: params[:id],user: @current_user).first
+    message = Message.where(id: params[:id]).first
     if message
       message.delete
       render json: {status: "200", message: "record successfully deleted"}, status: 200
