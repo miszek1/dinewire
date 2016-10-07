@@ -6,9 +6,9 @@ class Api::V1::MealsController < ApplicationController
   def index
     limit = params[:limit] || 10
     if params[:my_meals]
-      meals = Meal.personal_meals(@current_user).limit(limit)
+      meals = Meal.personal_meals(@current_user)
     else
-      meals = Meal.public_meals(@current_user).limit(limit)
+      meals = Meal.public_meals(@current_user)
     end
     render json: meals, status: 200
   end
