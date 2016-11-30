@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508002506) do
+ActiveRecord::Schema.define(version: 20161130045646) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20160508002506) do
     t.datetime "expires_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "flagged_for_review"
   end
 
+  add_index "meals", ["flagged_for_review"], name: "index_meals_on_flagged_for_review"
   add_index "meals", ["user_id"], name: "index_meals_on_user_id"
 
   create_table "messages", force: :cascade do |t|
