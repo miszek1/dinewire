@@ -76,15 +76,23 @@ class MealsController < ApplicationController
     #.near(request.location.coordinates, 20, :order => "distance")
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meal
-      @meal = current_user.meals.find(params[:id])
-    end
+  def flag
+   meal = Meal.find(params[:meal_id])
+   if meal
+     meal.flag!
+   end
+   redirect_to request.referer, notice: "Meal was flagged for review"
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def meal_params
-      params.require(:meal).permit(:name, :description, :location, :image, :expires_at)
-    end
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_meal
+    @meal = current_user.meals.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def meal_params
+    params.require(:meal).permit(:name, :description, :location, :image, :expires_at)
+  end
 
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :meals do 
     resources :messages, only: [:new]
-
+    get :flag
   end
   get "/pages/*id" => 'pages#show', as: :page, format: false
   
@@ -21,7 +21,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :meals
+      resources :meals do
+        get :flag
+      end
       resources :search
       resources :sessions, only: [:create] 
       resources :messages

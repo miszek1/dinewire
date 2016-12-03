@@ -22,6 +22,16 @@ class Api::V1::MealsController < ApplicationController
     end
   end   
 
+  def flag
+    meal = Meal.find(params[:id])
+    if meal
+      meal.flag!
+      render json: meal, status: 200
+    else 
+      render json: {status: "404", error: "record not found"}, status: 404
+    end
+  end   
+
   def create        
     json = params.permit(:name, :description, :latitude, :longitude, :image)
     meal = @current_user.meals.build(json)
