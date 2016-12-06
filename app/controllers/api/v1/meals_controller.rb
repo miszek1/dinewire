@@ -23,7 +23,7 @@ class Api::V1::MealsController < ApplicationController
   end   
 
   def flag
-    meal = Meal.find(params[:id])
+    meal = Meal.find(params[:meal_id])
     if meal
       meal.flag!
       render json: meal, status: 200
