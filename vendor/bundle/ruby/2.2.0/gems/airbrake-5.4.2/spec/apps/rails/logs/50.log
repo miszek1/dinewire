@@ -1,0 +1,113 @@
+# Logfile created on 2016-06-24 21:47:35 +0300 by logger.rb/53141
+D, [2016-06-24T21:47:35.374273 #52865] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar)[0m
+D, [2016-06-24T21:47:35.378983 #52865] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime)[0m
+D, [2016-06-24T21:47:35.379187 #52865] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T21:47:35.379500 #52865] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T21:47:35.380757 #52865] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2016-06-24T21:47:35.388795 #52865] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+D, [2016-06-24T21:47:35.391949 #52865] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T21:47:35.392798 #52865] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 18:47:35 UTC], ["updated_at", 2016-06-24 18:47:35 UTC]]
+D, [2016-06-24T21:47:35.392932 #52865] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T21:47:35.429731 #52865]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 21:47:35 +0300
+I, [2016-06-24T21:47:35.431810 #52865]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T21:47:35.433161 #52865]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T21:47:35.444934 #52865] FATAL -- :   
+F, [2016-06-24T21:47:35.444992 #52865] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T21:47:35.445023 #52865] FATAL -- :   
+F, [2016-06-24T21:47:35.445039 #52865] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T21:50:08.014017 #54769] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar)[0m
+D, [2016-06-24T21:50:08.018552 #54769] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime)[0m
+D, [2016-06-24T21:50:08.018734 #54769] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T21:50:08.019019 #54769] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T21:50:08.020245 #54769] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2016-06-24T21:50:08.029770 #54769] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+D, [2016-06-24T21:50:08.033226 #54769] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T21:50:08.034283 #54769] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 18:50:08 UTC], ["updated_at", 2016-06-24 18:50:08 UTC]]
+D, [2016-06-24T21:50:08.034438 #54769] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T21:50:08.067897 #54769]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 21:50:08 +0300
+I, [2016-06-24T21:50:08.070251 #54769]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T21:50:08.071702 #54769]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T21:50:08.083217 #54769] FATAL -- :   
+F, [2016-06-24T21:50:08.083260 #54769] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T21:50:08.083277 #54769] FATAL -- :   
+F, [2016-06-24T21:50:08.083290 #54769] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T22:53:39.817817 #905] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar) [0m
+D, [2016-06-24T22:53:39.822276 #905] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-06-24T22:53:39.822460 #905] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T22:53:39.822830 #905] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T22:53:39.824133 #905] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+D, [2016-06-24T22:53:39.830390 #905] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+D, [2016-06-24T22:53:39.834981 #905] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T22:53:39.835866 #905] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 19:53:39 UTC], ["updated_at", 2016-06-24 19:53:39 UTC]]
+D, [2016-06-24T22:53:39.836000 #905] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T22:53:39.867285 #905]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 22:53:39 +0300
+I, [2016-06-24T22:53:39.869146 #905]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T22:53:39.870355 #905]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T22:53:39.881558 #905] FATAL -- :   
+F, [2016-06-24T22:53:39.881610 #905] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T22:53:39.881640 #905] FATAL -- :   
+F, [2016-06-24T22:53:39.881654 #905] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T22:54:28.967661 #1610] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar) [0m
+D, [2016-06-24T22:54:28.972000 #1610] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-06-24T22:54:28.972183 #1610] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T22:54:28.972460 #1610] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T22:54:28.973672 #1610] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+D, [2016-06-24T22:54:28.980288 #1610] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+D, [2016-06-24T22:54:28.984630 #1610] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T22:54:28.985612 #1610] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 19:54:28 UTC], ["updated_at", 2016-06-24 19:54:28 UTC]]
+D, [2016-06-24T22:54:28.985777 #1610] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T22:54:29.016578 #1610]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 22:54:29 +0300
+I, [2016-06-24T22:54:29.018443 #1610]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T22:54:29.019747 #1610]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T22:54:29.031274 #1610] FATAL -- :   
+F, [2016-06-24T22:54:29.031332 #1610] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T22:54:29.037103 #1610] FATAL -- :   
+F, [2016-06-24T22:54:29.037165 #1610] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T23:01:30.687332 #6722] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar) [0m
+D, [2016-06-24T23:01:30.691748 #6722] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-06-24T23:01:30.691937 #6722] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T23:01:30.692330 #6722] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T23:01:30.693663 #6722] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+D, [2016-06-24T23:01:30.700127 #6722] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+D, [2016-06-24T23:01:30.704759 #6722] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T23:01:30.705625 #6722] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 20:01:30 UTC], ["updated_at", 2016-06-24 20:01:30 UTC]]
+D, [2016-06-24T23:01:30.705760 #6722] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T23:01:30.738308 #6722]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 23:01:30 +0300
+I, [2016-06-24T23:01:30.740218 #6722]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T23:01:30.741466 #6722]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T23:01:30.751441 #6722] FATAL -- :   
+F, [2016-06-24T23:01:30.756402 #6722] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T23:01:30.756422 #6722] FATAL -- :   
+F, [2016-06-24T23:01:30.756447 #6722] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T23:04:53.962771 #9181] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar) [0m
+D, [2016-06-24T23:04:53.970951 #9181] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-06-24T23:04:53.971298 #9181] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T23:04:53.971856 #9181] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T23:04:53.974061 #9181] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+D, [2016-06-24T23:04:53.980851 #9181] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+D, [2016-06-24T23:04:53.985493 #9181] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T23:04:53.986372 #9181] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 20:04:53 UTC], ["updated_at", 2016-06-24 20:04:53 UTC]]
+D, [2016-06-24T23:04:53.986503 #9181] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T23:04:54.024817 #9181]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 23:04:54 +0300
+I, [2016-06-24T23:04:54.026631 #9181]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T23:04:54.027922 #9181]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T23:04:54.038568 #9181] FATAL -- :   
+F, [2016-06-24T23:04:54.043683 #9181] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T23:04:54.043721 #9181] FATAL -- :   
+F, [2016-06-24T23:04:54.043737 #9181] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'
+D, [2016-06-24T23:05:06.666797 #9364] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar) [0m
+D, [2016-06-24T23:05:06.671659 #9364] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar, "queue" varchar, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-06-24T23:05:06.671894 #9364] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+D, [2016-06-24T23:05:06.672264 #9364] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+D, [2016-06-24T23:05:06.673788 #9364] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+D, [2016-06-24T23:05:06.680954 #9364] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+D, [2016-06-24T23:05:06.686943 #9364] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2016-06-24T23:05:06.688177 #9364] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-06-24 20:05:06 UTC], ["updated_at", 2016-06-24 20:05:06 UTC]]
+D, [2016-06-24T23:05:06.688467 #9364] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+I, [2016-06-24T23:05:06.720423 #9364]  INFO -- : Started GET "/crash" for 127.0.0.1 at 2016-06-24 23:05:06 +0300
+I, [2016-06-24T23:05:06.722284 #9364]  INFO -- : Processing by DummyController#crash as HTML
+I, [2016-06-24T23:05:06.723451 #9364]  INFO -- : Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+F, [2016-06-24T23:05:06.734968 #9364] FATAL -- :   
+F, [2016-06-24T23:05:06.735010 #9364] FATAL -- : AirbrakeTestError (AirbrakeTestError):
+F, [2016-06-24T23:05:06.735027 #9364] FATAL -- :   
+F, [2016-06-24T23:05:06.740146 #9364] FATAL -- : lib/airbrake/rack/middleware.rb:22:in `call'

@@ -1,0 +1,9 @@
+/Users/mic_z/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20190102-3051-ry3yao.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install

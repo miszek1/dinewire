@@ -1,0 +1,16 @@
+/Users/mic_z/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20190102-3051-1le3v6f.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling locker.c
+compiling byebug.c
+compiling context.c
+compiling breakpoint.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 byebug.bundle ./.gem.20190102-3051-1btgm98/byebug

@@ -223,6 +223,7 @@ DEPENDENCIES
   high_voltage
   jbuilder (~> 2.0)
   jquery-rails
+  json (>= 1.8)
   letter_opener
   masonry-rails (~> 0.2.0)
   paperclip (~> 4.3)

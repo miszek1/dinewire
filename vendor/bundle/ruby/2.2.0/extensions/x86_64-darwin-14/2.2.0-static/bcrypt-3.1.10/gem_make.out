@@ -1,0 +1,16 @@
+/Users/mic_z/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20190102-3051-1idyyjs.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling crypt_gensalt.c
+compiling crypt.c
+compiling bcrypt_ext.c
+compiling wrapper.c
+compiling crypt_blowfish.c
+linking shared-object bcrypt_ext.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20190102-3051-1n8hxdm

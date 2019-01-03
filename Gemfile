@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.10"
 
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +19,7 @@ gem "aws-sdk", '~> 1.6'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'geocoder'
 gem 'airbrake'
+gem 'json', '>= 1.8'
 
 
 # Use ActiveModel has_secure_password
