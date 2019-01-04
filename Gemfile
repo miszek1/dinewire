@@ -19,7 +19,7 @@ gem "aws-sdk", '~> 1.6'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'geocoder'
 gem 'json', '>= 1.8'
-
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,7 +49,7 @@ group :development do
 end
 
 group :production do 
-  gem 'pg'
+  
 end
 
 
