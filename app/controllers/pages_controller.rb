@@ -4,7 +4,11 @@ class PagesController < ApplicationController
 def home
 layout "landing_page"
 end
+
+def privacy
   
+end
+
   private
  def set_navbar
   case params[:id]
