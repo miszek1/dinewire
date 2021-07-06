@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
-  before_filter :set_navbar
+  before_action :set_navbar
 def home
 layout "landing_page"
 end
