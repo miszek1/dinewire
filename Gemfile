@@ -1,24 +1,20 @@
 source 'https://rubygems.org'
-ruby "2.4.5"
+ruby "2.7.3"
 
-gem 'rails', '4.2.11'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'rails'
+gem 'sass-rails'
+gem 'uglifier'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'devise', '~> 3.5.6'
+gem 'devise'
 gem 'high_voltage'
-gem "paperclip", "~> 4.3"
+gem "paperclip"
 gem 'acts_as_tree'
-gem 'masonry-rails', "~> 0.2.0"
 gem "font-awesome-rails" 
-gem "aws-sdk", '~> 1.6'
-gem 'rack-cors', :require => 'rack/cors'
+gem "aws-sdk"
+gem 'rack-cors'
 gem 'geocoder'
-gem 'json', '>= 1.8'
+gem 'json'
 gem 'pg', '~> 0.20'
 
 # Use ActiveModel has_secure_password
