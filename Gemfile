@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.7.3"
+ruby "2.6.8"
 
 gem 'rails'
 gem 'sass-rails'
@@ -10,7 +10,7 @@ gem 'devise'
 gem 'high_voltage'
 gem "paperclip"
 gem 'acts_as_tree'
-gem "font-awesome-rails" 
+gem "font-awesome-rails"
 gem "aws-sdk"
 gem 'rack-cors'
 gem 'geocoder'
@@ -44,8 +44,8 @@ group :development do
   gem 'spring'
 end
 
-group :production do 
-  
+group :production do
+
 end
 
 
