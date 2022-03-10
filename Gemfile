@@ -15,7 +15,7 @@ gem "aws-sdk"
 gem 'rack-cors'
 gem 'geocoder'
 gem 'json'
-gem 'pg', '~> 0.20'
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
