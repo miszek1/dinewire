@@ -31,7 +31,6 @@ class Api::V1::MessagesController < ApplicationController
 
   def create        
     #"include_player_ids" => [comment.user.onesignal_id],
-    #user = User.find_by(email: email.downcase)
     push_body = { 
       "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
       "url" => "https://onesignal.com",
