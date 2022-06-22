@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       resources :search
       resources :sessions, only: [:create]
       resources :messages
-      resources :messenger
+      resources :streams
       devise_for :users, controllers: {registrations: 'api/v1/registrations'}
     end
 

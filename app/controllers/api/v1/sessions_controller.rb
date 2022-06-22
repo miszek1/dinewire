@@ -7,7 +7,11 @@ class Api::V1::SessionsController < ApplicationController
    email = json["email"]
    user = User.find_by(email: email.downcase)
    if user && user.valid_password?(pw)
-    render json: {success: true, user: {authentication_token: user.authentication_token}}
+    render json: {success: true, user: {
+      id: user.id,
+      email: user.email,
+      authentication_token: user.authentication_token
+    }}
   else 
     render json: {status: "403",success: false, error: "Oops, your password or email is incorrect"}
    end
