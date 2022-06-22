@@ -5,7 +5,7 @@ gem 'rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'devise'
 gem 'high_voltage'
 gem "paperclip"
