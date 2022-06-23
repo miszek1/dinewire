@@ -41,8 +41,7 @@ class Api::V1::MessagesController < ApplicationController
       }.to_json
       puts push_body
       response = HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
-      message.response = response
-      render json: message, status: 200
+      render json: response, status: 200
     else
       render json: {status: "500", error: "record could not be created at this time"}, status: 500
     end
