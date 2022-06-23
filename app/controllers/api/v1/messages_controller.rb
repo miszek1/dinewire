@@ -36,7 +36,7 @@ class Api::V1::MessagesController < ApplicationController
     if message.save
       push_body = { 
         "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
-        "include_external_user_id" => [:recipient_id],
+        "include_external_user_id" => [:recipient_id.to_s],
         "data" => { "type": "new_message" },
         "contents" => { "en" => :body}
       }.to_json
