@@ -40,6 +40,7 @@ class Api::V1::MessagesController < ApplicationController
         "data" => { "type": "new_message" },
         "contents" => { "en" => :body}
       }.to_json
+      puts push_body
       HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
       render json: message, status: 200
     else
