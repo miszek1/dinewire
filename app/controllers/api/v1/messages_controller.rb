@@ -16,7 +16,6 @@ class Api::V1::MessagesController < ApplicationController
   def index
     limit = params[:limit] || 10
     messages = Message.where(recipient_id: @current_user.id).order( 'created_at DESC' )
-
     render json: messages, status: 200
   end
 
@@ -35,13 +34,13 @@ class Api::V1::MessagesController < ApplicationController
     if message.save
       push_body = { 
         "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
-        "include_external_user_ids" => [:recipient_id],
+        "include_external_user_ids" => [json['recipient_id']],
         "data" => { "type": "new_message" },
-        "contents" => { "en" => :body}
+        "headings" => { "en" => 'From: ' + @current_user.full_name() },
+        "contents" => { "en" => json['body']}
       }.to_json
-      puts push_body
-      response = HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
-      render json: push_body, status: 200
+      HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
+      render json: message, status: 200
     else
       render json: {status: "500", error: "record could not be created at this time"}, status: 500
     end
