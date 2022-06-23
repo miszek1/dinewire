@@ -30,22 +30,21 @@ class Api::V1::MessagesController < ApplicationController
   end   
 
   def create        
-    #"include_player_ids" => [comment.user.onesignal_id],
-    push_body = { 
-      "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
-      "url" => "https://onesignal.com",
-      "included_segments" => ["All"],
-      "data" => { "type": "new_comment" },
-      "contents" => { "en" => "You have received a new comment." }
-    }.to_json
-    HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
-    # json = params[:body].permit(:subject, :body, :recipient_id, :parent_id)
-    # message = @current_user.messages.build(json)
-    # if message.save
-    #   render json: message, status: 200
-    # else
-    #   render json: {status: "500", error: "record could not be created at this time"}, status: 500
-    # end
+    json = params[:body].permit(:subject, :body, :recipient_id, :parent_id)
+    message = @current_user.messages.build(json)
+    message.inspect
+    if message.save
+      push_body = { 
+        "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
+        "include_player_ids" => [:recipient_id],
+        "data" => { "type": "new_message" },
+        "contents" => { "en" => :body}
+      }.to_json
+      HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
+      render json: message, status: 200
+    else
+      render json: {status: "500", error: "record could not be created at this time"}, status: 500
+    end
   end
 
   def destroy

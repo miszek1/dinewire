@@ -25,7 +25,7 @@ class Message < ActiveRecord::Base
 
   def as_json(options={})
     super(
-      :methods => [:author, :parentMessage]
+      :methods => [:author]
     )
   end
 end
