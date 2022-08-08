@@ -6,10 +6,12 @@ class Api::V1::StreamsController < ApplicationController
   # GET /Streams.json
   def index
 	query = <<-SQL
-		select distinct on (user_id) user_id, body, messages.created_at, first_name, last_name
+		select distinct on (user_id) 
+		CASE WHEN user_id = #{ @current_user.id } THEN recipient_id ELSE user_id END as user_id,
+		body, messages.created_at, first_name, last_name
 		from messages
 		Left Join users on users.id = user_id
-		where recipient_id = #{ @current_user.id }
+		where recipient_id = #{ @current_user.id } or user_id = #{ @current_user.id }
 		order by user_id, messages.created_at desc
 	SQL
 	messages = ActiveRecord::Base.connection.execute(query)

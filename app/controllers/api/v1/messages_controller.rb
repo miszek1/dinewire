@@ -29,17 +29,20 @@ class Api::V1::MessagesController < ApplicationController
   end   
 
   def create        
-    json = params[:body].permit(:subject, :body, :recipient_id, :parent_id)
+    json = params[:body]
+      .permit(:subject, :body, :recipient_id, :parent_id, :user_id)
+      .with_defaults(parent_id: 0, subject: '', user_id: @current_user.id)
     message = @current_user.messages.build(json)
+    puts message
     if message.save
       push_body = { 
         "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d',
-        "include_external_user_ids" => [json['recipient_id']],
+        "include_external_user_ids" => [json['recipient_id'].to_s],
         "data" => { "type": "new_message" },
         "headings" => { "en" => 'From: ' + @current_user.full_name() },
         "contents" => { "en" => json['body']}
       }.to_json
-      HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, logger: @push_logger, log_level: :debug, log_format: :curl
+      HTTParty.post "https://onesignal.com/api/v1/notifications", headers: HEADERS, body: push_body, :debug_output => $stdout
       render json: message, status: 200
     else
       render json: {status: "500", error: "record could not be created at this time"}, status: 500

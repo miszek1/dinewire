@@ -1,7 +1,7 @@
 class Meal < ActiveRecord::Base
   belongs_to :user
   scope :personal_meals, -> (user) { where(user_id: user.id) }
-  scope :public_meals, -> (user) { ready_to_eat.where.not(user_id: user.id) }
+  scope :public_meals, -> (user) { ready_to_eat }
   scope :ready_to_eat, -> { where(expires_at: DateTime.now..1.hour.from_now, flagged_for_review: nil)}
   scope :search, -> (name) { where("lower(name) like?", "%#{name.downcase}%")}
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
