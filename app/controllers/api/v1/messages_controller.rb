@@ -7,7 +7,7 @@ class Api::V1::MessagesController < ApplicationController
   @push_logger = ::Logger.new(Rails.root.join('log', 'push.log'))
 
   # Every request needs to inform the APP ID.
-  HEADERS = { "Authorization" => "Basic ZDc1Yjk2MTctNmVlNC00YzQ1LTlkYTAtMjhlOWIzMDVmOTE0", "Content-Type" => "application/json" }
+  HEADERS = { "Authorization" => ENV['ONESIGNAL_AUTH'], "Content-Type" => "application/json" }
 
   @body =  {
     "app_id" => '66e1b37a-7fb4-4da5-a4e7-432a296a240d'
